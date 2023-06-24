@@ -1,0 +1,14 @@
+ositions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+
+scrape_configs:
+- job_name: auth_log
+  static_configs:
+  - targets:
+      - loki
+    labels:
+      job: auth_logs
+      __path__: /var/log/auth.log
