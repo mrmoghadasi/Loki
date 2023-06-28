@@ -48,3 +48,22 @@ sudo chown 10001:10001 /volumes/loki
 sudo chown 472:472 /volumes/grafana
 ```
 
+5. Start deploy whith dockercCompose:
+```
+docker-compose up -d
+```
+
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) 
+This project is licensed under the MIT License.
+
+## Credits
+
+This project was created by My User (mrm.elec@email.com)
+
+[![LinkedIn](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/mohamad-reza-moghadasi-5755b959/)](https://www.linkedin.com/in/mohamad-reza-moghadasi-5755b959/) [![Gmail](https://img.shields.io/badge/-Gmail-red?style=flat-square&logo=Gmail&logoColor=white&link=mailto:mrm.elec@gmail.com)](mailto:mrm.elec@gmail.com)
+
+
+
