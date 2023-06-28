@@ -8,7 +8,7 @@ services:
     image: grafana/loki:2.8.0
     volumes:
       - /opt/loki/config/loki-config.yml:/etc/loki/loki-config.yml
-      - ./volumes/loki:/loki
+      - /volumes/loki:/loki
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/loki-config.yml
@@ -28,7 +28,7 @@ services:
     image: grafana/grafana:latest
     volumes:
       - /opt/loki/config/defaults-grafana.ini:/usr/share/grafana/conf/defaults.ini
-      - ./volumes/grafana:/var/lib/grafana    
+      - /volumes/grafana:/var/lib/grafana    
     ports:
       - "3000:3000"
     networks:
