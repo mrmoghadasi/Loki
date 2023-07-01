@@ -33,7 +33,7 @@ mkdir -p /opt/loki/config/
 cd Loki
 cp promtail-config.yml /opt/loki/config/
 cp loki-config.yml /opt/loki/config/
-cp defaults-grafana.ini /opt/loki/config/
+cp grafana-defaults.ini /opt/loki/config/
 ```
 
 4. Create volume directory
