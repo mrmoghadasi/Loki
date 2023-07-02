@@ -33,3 +33,20 @@ services:
       - "3000:3000"
     networks:
       - loki
+
+
+  nginx:
+    image: quay.io/dtan4/nginx-basic-auth-proxy
+    environment:
+      - BASIC_AUTH_USERNAME=loki_user
+      - BASIC_AUTH_PASSWORD=loki_password
+      - PROXY_PASS=http://loki:3100
+      - PORT=3200
+      - SERVER_NAME=_
+    ports:
+      - 3200:3200
+      - 8090:8090
+    networks:
+      - loki
+
+      
