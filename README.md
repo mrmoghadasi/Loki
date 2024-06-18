@@ -14,27 +14,28 @@ Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation 
 
 **Volumes:**
 
-`/opt/loki/config/loki-config.yml` mounted to `/etc/loki/loki-config.yml` in the Loki container allows you to customize Loki configuration.
-`/volumes/loki` mounted to `/loki` in the Loki container provides persistent storage for logs.
-`/opt/loki/config/promtail-config.yml` mounted to `/etc/promtail/promtail-config.yml` in the Promtail container allows customization of log collection rules.
-`/var/log/auth.log` mounted to `/var/log/auth.log` in the Promtail container allows collecting system logs (replace with your desired log location).
-`/opt/loki/config/grafana-defaults.ini` mounted to `/usr/share/grafana/conf/defaults.ini` in the Grafana container allows configuration overrides for Grafana.
-`/volumes/grafana` mounted to `/var/lib/grafana` in the Grafana container provides persistent storage for Grafana data.
+- `/opt/loki/config/loki-config.yml` mounted to `/etc/loki/loki-config.yml` in the Loki container allows you to customize Loki configuration.
+- `/volumes/loki` mounted to `/loki` in the Loki container provides persistent storage for logs.
+- `/opt/loki/config/promtail-config.yml` mounted to `/etc/promtail/promtail-config.yml` in the Promtail container allows customization of log collection rules.
+- `/var/log/auth.log` mounted to `/var/log/auth.log` in the Promtail container allows collecting system logs (replace with your desired log location).
+- `/opt/loki/config/grafana-defaults.ini` mounted to `/usr/share/grafana/conf/defaults.ini` in the Grafana container allows configuration overrides for Grafana.
+- `/volumes/grafana` mounted to `/var/lib/grafana` in the Grafana container provides persistent storage for Grafana data.
 
 **Ports:**
 
-    - Loki: 3100 (container) -> 3100 (host) - Exposes the Loki web interface.
-    - Promtail: None (runs in the background)
-    - Grafana: 3000 (container) -> 3000 (host) - Exposes the Grafana interface.
-    -   Nginx:
-        - 3200 (container) -> 3200 (host) - Exposes the Nginx proxy interface.
-        - 8090:8090 (optional) - Exposes the Nginx admin interface for configuration (if needed).
+- Loki: 3100 (container) -> 3100 (host) - Exposes the Loki web interface.
+- Promtail: None (runs in the background)
+- Grafana: 3000 (container) -> 3000 (host) - Exposes the Grafana interface.
+-   Nginx:
+    - 3200 (container) -> 3200 (host) - Exposes the Nginx proxy interface.
+    - 8090:8090 (optional) - Exposes the Nginx admin interface for configuration (if needed).
 
 **Nginx Authentication:**
 
 Basic authentication is enabled using environment variables:
-    - BASIC_AUTH_USERNAME: Username for accessing Loki (default: loki_user)
-    - BASIC_AUTH_PASSWORD: Password for accessing Loki (default: loki_password)
+
+- BASIC_AUTH_USERNAME: Username for accessing Loki (default: loki_user)
+- BASIC_AUTH_PASSWORD: Password for accessing Loki (default: loki_password)
 
 ## Requirements
 
